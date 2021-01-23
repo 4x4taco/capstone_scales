@@ -1,0 +1,9 @@
+<launch> 
+  <include file="$(find scale_frds_pkg)/launch/gaz_to_ros_relay_frds.launch" />
+  <include file="$(find scale_frps_pkg)/launch/gaz_to_ros_relay_frps.launch" />
+  <include file="$(find scale_rds_pkg)/launch/gaz_to_ros_relay_rds.launch" />
+  <include file="$(find scale_rps_pkg)/launch/gaz_to_ros_relay_rps.launch" /> 
+  <node name="scale_controller_node" pkg="scale_controller" type="scale_cont_node"
+        output="screen" launch-prefix="xterm -e" >
+  </node>
+</launch>

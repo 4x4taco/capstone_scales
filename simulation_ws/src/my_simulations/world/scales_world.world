@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+    <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+          <sor>1.0</sor> <!-- Important, see issue #2209 -->
+          <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
+        </solver>
+      </ode>
+    </physics>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name="weight_scales">
+      <!-- scale sensor and link for driver side front -->
+      <link name="scale_driverside_front">
+        <pose>2 2 .25 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>0.100000</ixx>
+            <ixy>0.000000</ixy>
+            <ixz>0.000000</ixz>
+            <iyy>0.100000</iyy>
+            <iyz>0.000000</iyz>
+            <izz>0.100000</izz>
+          </inertia>
+          <mass>394.176</mass>
+        </inertial>
+        <visual name="visual_box">
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <visual name="visual_cylinder">
+          <pose>0 0 -0.125 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.100000</radius>
+              <length>.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <collision name="collision_box">
+          <max_contacts>250</max_contacts>
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+      <joint name="joint_01" type="revolute">
+        <parent>world</parent>
+        <child>scale_driverside_front</child>
+        <pose>0 0 -0.25 0 0 0</pose>
+        <axis>
+          <limit>
+            <lower>-1.57079</lower>
+            <upper>1.57079</upper>
+          </limit>
+          <dynamics>
+            <damping>0.000000</damping>
+            <friction>0.000000</friction>
+          </dynamics>
+          <xyz>1.000000 0.000000 0.000000</xyz>
+        </axis>
+        <sensor name="force_torque_frds" type="force_torque">
+          <update_rate>5</update_rate>
+        </sensor>
+      </joint>
+      <!-- scale sensor and link for passenger side front -->
+            <link name="scale_passengerside_front">
+        <pose>2 -2 .25 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>0.100000</ixx>
+            <ixy>0.000000</ixy>
+            <ixz>0.000000</ixz>
+            <iyy>0.100000</iyy>
+            <iyz>0.000000</iyz>
+            <izz>0.100000</izz>
+          </inertia>
+          <mass>370.135</mass>
+        </inertial>
+        <visual name="visual_box">
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <visual name="visual_cylinder">
+          <pose>0 0 -0.125 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.100000</radius>
+              <length>.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <collision name="collision_box">
+          <max_contacts>250</max_contacts>
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+      <joint name="joint_02" type="revolute">
+        <parent>world</parent>
+        <child>scale_passengerside_front</child>
+        <pose>0 0 -0.25 0 0 0</pose>
+        <axis>
+          <limit>
+            <lower>-1.57079</lower>
+            <upper>1.57079</upper>
+          </limit>
+          <dynamics>
+            <damping>0.000000</damping>
+            <friction>0.000000</friction>
+          </dynamics>
+          <xyz>1.000000 0.000000 0.000000</xyz>
+        </axis>
+        <sensor name="force_torque_frps" type="force_torque">
+          <update_rate>5</update_rate>
+        </sensor>
+      </joint>
+      <!-- scale sensor and link for driver side rear -->
+      <link name="scale_driverside_rear">
+        <pose>-2 -2 .25 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>0.100000</ixx>
+            <ixy>0.000000</ixy>
+            <ixz>0.000000</ixz>
+            <iyy>0.100000</iyy>
+            <iyz>0.000000</iyz>
+            <izz>0.100000</izz>
+          </inertia>
+          <mass>273.065</mass>
+        </inertial>
+        <visual name="visual_box">
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <visual name="visual_cylinder">
+          <pose>0 0 -0.125 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.100000</radius>
+              <length>.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <collision name="collision_box">
+          <max_contacts>250</max_contacts>
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+      <joint name="joint_03" type="revolute">
+        <parent>world</parent>
+        <child>scale_driverside_rear</child>
+        <pose>0 0 -0.25 0 0 0</pose>
+        <axis>
+          <limit>
+            <lower>-1.57079</lower>
+            <upper>1.57079</upper>
+          </limit>
+          <dynamics>
+            <damping>0.000000</damping>
+            <friction>0.000000</friction>
+          </dynamics>
+          <xyz>1.000000 0.000000 0.000000</xyz>
+        </axis>
+        <sensor name="force_torque_rds" type="force_torque">
+          <update_rate>5</update_rate>
+        </sensor>
+      </joint>
+      <!-- scale sensor and link for passenger side rear -->
+      <link name="scale_passengerside_rear">
+        <pose>-2 2 .25 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>0.100000</ixx>
+            <ixy>0.000000</ixy>
+            <ixz>0.000000</ixz>
+            <iyy>0.100000</iyy>
+            <iyz>0.000000</iyz>
+            <izz>0.100000</izz>
+          </inertia>
+          <mass>260.818</mass>
+        </inertial>
+        <visual name="visual_box">
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <visual name="visual_cylinder">
+          <pose>0 0 -0.125 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.100000</radius>
+              <length>.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <collision name="collision_box">
+          <max_contacts>250</max_contacts>
+          <geometry>
+            <box>
+              <size>.75 .75 .1</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+      <joint name="joint_04" type="revolute">
+        <parent>world</parent>
+        <child>scale_passengerside_rear</child>
+        <pose>0 0 -0.25 0 0 0</pose>
+        <axis>
+          <limit>
+            <lower>-1.57079</lower>
+            <upper>1.57079</upper>
+          </limit>
+          <dynamics>
+            <damping>0.000000</damping>
+            <friction>0.000000</friction>
+          </dynamics>
+          <xyz>1.000000 0.000000 0.000000</xyz>
+        </axis>
+        <sensor name="force_torque_rps" type="force_torque">
+          <update_rate>5</update_rate>
+        </sensor>
+      </joint>
+    </model>
+  </world>
+</sdf>

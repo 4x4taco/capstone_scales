@@ -1,0 +1,9 @@
+<launch>  
+  <!--include file="/home/bubu/simulation_ws/src/my_simulations/launchscales_world.launch" /-->
+  <node name="gazebo_transport_to_ros_topic_rps" pkg="scale_rps_pkg" type="gazebo_transport_to_ros_topic_rps"
+        output="screen" launch-prefix="xterm -e" >
+  <param name="gazebo_transport_topic_to_sub_rps" type="str" value="/gazebo/default/weight_scales/joint_04/force_torque_rps/wrench" />
+  <param name="ros_topic_to_pub_rps" type="str" value="gazebo_transport_to_ros_topic_rps" />
+  <param name="ros_rate" type="double" value="5.0" />
+  </node>
+</launch>
