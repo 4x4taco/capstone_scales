@@ -22,3 +22,6 @@ The scale world file has been created to display the location of the vehicle sca
 4. Compile using catkin_make within catkin_ws directory
 5. Launch gazebo world within simulation_ws using roslaunch my_simulations scales_world.launch
 6. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch
+
+## Project Description
+![alt text](https://github.com/4x4taco/capstone_scales/tree/main/capstone_scale_pics/gazebo_scale_layout.png)
