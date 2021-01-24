@@ -24,4 +24,4 @@ The scale world file has been created to display the location of the vehicle sca
 6. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch
 
 ## Project Description
-![Screenshot](capstone_scales/capstone_scale_pics/gazebo_scale_layout.PNG)
+![Screenshot](/capstone_scale_pics/gazebo_scale_layout.PNG)
