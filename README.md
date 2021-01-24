@@ -25,3 +25,9 @@ The scale world file has been created to display the location of the vehicle sca
 
 ## Project Description
 ![Screenshot](/capstone_scale_pics/gazebo_scale_layout.PNG)
+
+![Screenshot](/capstone_scale_pics/gazebo_sensor_output.PNG)
+
+![Screenshot](/capstone_scale_pics/node_graph.PNG)
+
+![Screenshot](/capstone_scale_pics/scale_cont_node_output.PNG)
