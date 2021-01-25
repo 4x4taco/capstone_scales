@@ -34,6 +34,8 @@ A small delay was added between launching the gazebo world and launching the ROS
 ### Project Node Graph
 ![Screenshot](/capstone_scale_pics/node_graph.PNG)
 
-Calculations inside the scale controller class and anode include summation of each force sensor on each scale.  The values for front, rear, driver and passenger are accumulated and normalize with respect to the total weight of the vehicle.  This represents the the weight distribution of the vehicle.  
+Calculations inside the scale controller class and anode include summation of each force sensor on each scale.  The values for front, rear, driver and passenger are accumulated and normalize with respect to the total weight of the vehicle.  This represents the weight distribution of the vehicle expressed in percentages.  
 ### Scale Controller Output
 ![Screenshot](/capstone_scale_pics/scale_cont_node_output.PNG)
+
+The following columns in the output terminal, represent the labels for the different sections of the vehicle.  (FRDS) Front Driver Side, (FRPS) Front Passenger Side, (RDS) Rear Driver Side, (RPS) Rear Passenger Side.  Pecentages of the weight distributions are displayed as (DR) Driver side, (PS) Passenger side, (FR) Front, (RR) Rear.
