@@ -26,7 +26,7 @@ The scale world file has been created to display the location of the vehicle sca
 Scales_world.world contains all of the inititial settings for the scale layout in Gazebo.  Revolute joints were created and attached to the world and link coordinate systems. Force torque sensors were then attached to the joints.  These sensors measure the angular torque and force for all of the degrees of freedom.  Only the weight vector for the scales was used for the rest of the project.  The mass parameter of the .world file was overidden to represent masses proportional to measurements taken in a real world measurement obtained with a set of Long Acre corner scales.  See picture of scale layout in Gazebo below.
 
 ### Scale Layout in Gazebo
-![Screenshot](/capstone_scale_pics/gazebo_scale_layout.PNG
+![Screenshot](/capstone_scale_pics/gazebo_scale_layout.PNG)
 
 A small delay was needed between launching the gazebo world and launching the ROS nodes.  This is to establish the gazebo environment and transport layer.  Due to this delay the Gazebo launch file was kept seperate from the the main launch file.  ROS nodes subscribe to the sensor values inside Gazebo.  The ROS nodes then publish to a topic and are started along with the node for the scale controller that handles the calculations and output.  See Gazebo sensor output and ROS architecture below.
 ### Gazebo Sensor Output
