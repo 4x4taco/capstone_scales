@@ -24,12 +24,16 @@ The scale world file has been created to display the location of the vehicle sca
 6. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch
 
 ## Project Description
-
+File scales_world.launch contains all of the inititial settings for the scale layout.  Revolute joints were created and attached to the world and link coordinate systems.  The mass parameter of the .world file was overidden to represent mass proportional to measurements taken in a real world measurement obtained with a set of long acre corner scales.  See picture of scale layout in Gazebo below.
 ### Scale Layout in Gazebo
-![Screenshot](/capstone_scale_pics/gazebo_scale_layout.PNG)
+![Screenshot](/capstone_scale_pics/gazebo_scale_layout.PNG
 
+A small delay was added between launching the gazebo world and launching the ROS nodes.  This is to establish the gazebo environment and transport layer.  ROS nodes that subscribe to the sensor values inside Gazebo a publish to a topic are started along with a node for the controller that handles the calucaltions and output.  See Gazebo sensor output and ROS architecture below.
+### Gazebo Sensor Output
 ![Screenshot](/capstone_scale_pics/gazebo_sensor_output.PNG)
-
+### Project Node Graph
 ![Screenshot](/capstone_scale_pics/node_graph.PNG)
 
+Calculations inside the scale controller class and anode include summation of each force sensor on each scale.  The values for front, rear, driver and passenger are accumulated and normalize with respect to the total weight of the vehicle.  This represents the the weight distribution of the vehicle.  
+### Scale Controller Output
 ![Screenshot](/capstone_scale_pics/scale_cont_node_output.PNG)
