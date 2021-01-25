@@ -8,9 +8,22 @@ The scale world file has been created to display the location of the vehicle sca
 ## Dependencies for Running Locally
 * cmake >= 2.8.3
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
-*rosdistro: Kinetic
-*rosversion: 1.12.16
-*gazebo: version 7.16.1
+* rosdistro: Kinetic
+* rosversion: 1.12.16
+* gazebo: version 7.16.1
+
+* cmake >= 2.8
+  * All OSes: [click here for installation instructions](https://cmake.org/install/)
+* make >= 4.1 (Linux, Mac), 3.81 (Windows)
+  * Linux: make is installed by default on most Linux distros
+  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
+* OpenCV >= 4.1
+  * The OpenCV 4.1.0 source code can be found [here](https://github.com/opencv/opencv/tree/4.1.0)
+* gcc/g++ >= 5.4
+  * Linux: gcc / g++ is installed by default on most Linux distros
+  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
+  * Windows: recommend using [MinGW](http://www.mingw.
 
 
 
