@@ -15,12 +15,14 @@ The scale world file has been created to display the location of the vehicle sca
 
 ## Basic Build Instructions
 
-1. Clone this repo.
-2. Copy src folder into catkin_ws/src
-3. Copy simulation_ws to working directory
+1. Clone this repo.  git clone https://github.com/4x4taco/capstone_scales
+2. Copy all subfolder of src folder into catkin_ws/src folder with file browser
+3. Copy simulation_ws folder to same directory as catkin_ws
 4. Compile using catkin_make within catkin_ws directory
-5. Launch gazebo world within simulation_ws using roslaunch my_simulations scales_world.launch
-6. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch
+5. Source contents of my simulations using source simulation_ws/devel/setup.bash
+6. Launch gazebo world within simulation_ws using roslaunch my_simulations scales_world.launch
+7. Source contents of catkin_ws using source catkin_ws/devel/setup.bash
+8. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch
 
 ## Project Description
 Scales_world.world contains all of the inititial settings for the scale layout in Gazebo.  Revolute joints were created and attached to the world and link coordinate systems. Force torque sensors were then attached to the joints.  These sensors measure the angular torque and force for all of the degrees of freedom.  Only the weight vector for the scales was used for the rest of the project.  The mass parameter of the .world file was overidden to represent masses proportional to measurements taken in a real world measurement obtained with a set of Long Acre corner scales.  See picture of scale layout in Gazebo below.
