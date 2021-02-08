@@ -15,12 +15,12 @@ The scale world file has been created to display the location of the vehicle sca
 ## Project Rubric Points
 
 1. All points of the Readme and compiling/testing sections have been addressed.
-2(1). Project demonstrates and understanding of C++ functions and control structures.  See line(s) 38, 47, 55, 63, 73, 90, 102, and 119 of src/scale_cont.cpp
-3(2). Project reads data from a file and processes the data. In each of the gazebo_transport_to_ros files the ros::param::get function is called to retrieve labels from the           launch file.  The string values are used to setup the labels for the sensors within Gazebo.  See line(s) 57, 58, and 58 within                                                   src/scale_frds_pkg/src/gazebo_transport_to_ros_topic_frds.cpp and line(s) 4,5, and 6 within src/scale_frds_pkg/launch/gaz_to_ros_relay_frds.launch
-4(3). The Project uses Object Oriented Programming techniques.  The Gazebo transport to ROS source files were not organized using classes, however src/scale_cont.cpp made use of       object oriented programming
-5(4). Class constructors utilize member initialization lists.  src/scale_cont.cpp line(s) 5, 6, and 7 initialize a public and private ros nodehandle.
-6(5). The project makes uswe of references in function declarations.  line(s) 11-17 of src/scale_cont.cpp use references to call the callback functions when a message is               detected on the suscribed topic.
-7(6). Classes encapslate behavior.  Data and fucntions that pertain to to displaying and calculating the scale weights were kept within the scaleController class                       src/scale_cont.cpp.
+2. Project demonstrates and understanding of C++ functions and control structures.  See line(s) 38, 47, 55, 63, 73, 90, 102, and 119 of src/scale_cont.cpp
+3. Project reads data from a file and processes the data. In each of the gazebo_transport_to_ros files the ros::param::get function is called to retrieve labels from the           launch file.  The string values are used to setup the labels for the sensors within Gazebo.  See line(s) 57, 58, and 58 within                                                   src/scale_frds_pkg/src/gazebo_transport_to_ros_topic_frds.cpp and line(s) 4,5, and 6 within src/scale_frds_pkg/launch/gaz_to_ros_relay_frds.launch
+4. The Project uses Object Oriented Programming techniques.  The Gazebo transport to ROS source files were not organized using classes, however src/scale_cont.cpp made use of       object oriented programming
+5. Class constructors utilize member initialization lists.  src/scale_cont.cpp line(s) 5, 6, and 7 initialize a public and private ros nodehandle.
+6. The project makes uswe of references in function declarations.  line(s) 11-17 of src/scale_cont.cpp use references to call the callback functions when a message is               detected on the suscribed topic.
+7. Classes encapslate behavior.  Data and fucntions that pertain to to displaying and calculating the scale weights were kept within the scaleController class                       src/scale_cont.cpp.
 
 
 ## Basic Build Instructions
