@@ -27,12 +27,12 @@ The scale world file has been created to display the location of the vehicle sca
 ## Basic Build Instructions
 
 1. Ensure ROS and all dependencies have been installed.  For instructions to install ROS and Gazebo see http://wiki.ros.org/Installation/Ubuntu.
-2. Clone this repo.  git clone https://github.com/4x4taco/capstone_scales.
+2. Clone this repo git clone https://github.com/4x4taco/capstone_scales.
 3. If catkin_ws folder has not been created follow directions here to create a ROS workspace http://wiki.ros.org/catkin/Tutorials/create_a_workspace.
 4. Copy all subfolder of cloned repository /src folder into catkin_ws/src folder with file browser.
 5. Copy simulation_ws folder to same directory as catkin_ws.
-6. Change directory to catkin_ws.  cd ~/catkin_ws
-6. Compile ROS nodes using catkin_make. catkin_make  
+6. Change directory to catkin_ws cd ~/catkin_ws.
+6. Compile ROS nodes using catkin_make catkin_make.  
 7. Source contents of my simulations using source simulation_ws/devel/setup.bash.
 8. Launch gazebo world within simulation_ws using roslaunch my_simulations scales_world.launch.
 9. Source contents of catkin_ws using source catkin_ws/devel/setup.bash.
