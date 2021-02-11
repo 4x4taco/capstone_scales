@@ -6,6 +6,7 @@ This project replicates a set of vehicle corner scales to approximate the weight
 The scale world file has been created to display the location of the vehicle scales via simplified geometry and displayed in red.  The main node scale controller sums the total weights of each scale and provides an textual output for the weight distributions of the vehicles normalized to the total weight.
 
 ## Dependencies for Running Locally
+* Ubuntu 64bit 16.04
 * cmake >= 2.8.3
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * rosdistro: Kinetic
@@ -25,14 +26,17 @@ The scale world file has been created to display the location of the vehicle sca
 
 ## Basic Build Instructions
 
-1. Clone this repo.  git clone https://github.com/4x4taco/capstone_scales
-2. Copy all subfolder of src folder into catkin_ws/src folder with file browser
-3. Copy simulation_ws folder to same directory as catkin_ws
-4. Compile using catkin_make within catkin_ws directory
-5. Source contents of my simulations using source simulation_ws/devel/setup.bash
-6. Launch gazebo world within simulation_ws using roslaunch my_simulations scales_world.launch
-7. Source contents of catkin_ws using source catkin_ws/devel/setup.bash
-8. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch
+1. Ensure ROS and all dependencies have been installed.  For instructions to install ROS and Gazebo see http://wiki.ros.org/Installation/Ubuntu.
+2. Clone this repo.  git clone https://github.com/4x4taco/capstone_scales.
+3. If catkin_ws folder has not been created follow directions here to create a ROS workspace http://wiki.ros.org/catkin/Tutorials/create_a_workspace.
+4. Copy all subfolder of cloned repository /src folder into catkin_ws/src folder with file browser.
+5. Copy simulation_ws folder to same directory as catkin_ws.
+6. Change directory to catkin_ws.  cd ~/catkin_ws
+6. Compile ROS nodes using catkin_make. catkin_make  
+7. Source contents of my simulations using source simulation_ws/devel/setup.bash.
+8. Launch gazebo world within simulation_ws using roslaunch my_simulations scales_world.launch.
+9. Source contents of catkin_ws using source catkin_ws/devel/setup.bash.
+10. Launch rosnodes from within catkin_ws/src using roslaunch scale_controller scale_controller.launch.
 
 ## Project Description
 Scales_world.world contains all of the inititial settings for the scale layout in Gazebo.  Revolute joints were created and attached to the world and link coordinate systems. Force torque sensors were then attached to the joints.  These sensors measure the angular torque and force for all of the degrees of freedom.  Only the weight vector for the scales was used for the rest of the project.  The mass parameter of the .world file was overidden to represent masses proportional to measurements taken in a real world measurement obtained with a set of Long Acre corner scales.  See picture of scale layout in Gazebo below.
